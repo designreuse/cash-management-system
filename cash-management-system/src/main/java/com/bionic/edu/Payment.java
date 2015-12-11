@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Payment {
@@ -15,7 +17,10 @@ private double sumPayed;
 private String goods;
 private java.sql.Timestamp dt;
 private int customerId;
-private int merchantId;
+@ManyToOne
+@JoinColumn(name="merchantId")
+private Merchant merchant;
+
 // Constructors & accessors
 public Payment() {}
 public int getId() {
@@ -54,10 +59,16 @@ public int getCustomerId() {
 public void setCustomerId(int customerId) {
 	this.customerId = customerId;
 }
-public int getMerchantId() {
-	return merchantId;
+public Merchant getMerchant() {
+	return merchant;
 }
-public void setMerchantId(int merchantId) {
-	this.merchantId = merchantId;
+public void setMerchant(Merchant merchant) {
+	this.merchant = merchant;
 }
+@Override
+public String toString() {
+	return "Payment [chargePayed=" + chargePayed + ", sumPayed=" + sumPayed
+			+ ", goods=" + goods + "]";
+}
+
 }

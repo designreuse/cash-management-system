@@ -17,4 +17,8 @@ public class PaymentServiceImpl implements PaymentService {
 	public double getPaymentSum() {
 		return paymentDao.getPaymentSum();
 	}
+	
+	public Payment findById(int id) {
+		return paymentDao.findById(id);
+	}
 }

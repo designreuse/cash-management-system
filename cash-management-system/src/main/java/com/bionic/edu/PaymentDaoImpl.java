@@ -23,4 +23,16 @@ public class PaymentDaoImpl implements PaymentDao{
         TypedQuery<Double> query = em.createQuery 	("SELECT SUM(p.sumPayed) FROM 	Payment p", Double.class);
         return query.getSingleResult();
     }
+    
+    public Payment findById(int id){
+        return em.find(Payment.class, id);
+    }
+    
+    /*
+    public List<Result> getTotalReport(){
+        String txt = "SELECT new com.bionic.edu.Result (p.merchant.name, count(p), SUM(p.chargePayed))";
+        txt += "FROM Payment p GROUP BY p.merchant.name"; 
+        TypedQuery<Result> query = em.createQuery(txt, 	Result.class);
+        return query.getResultList();
+    } */
 }
