@@ -6,4 +6,6 @@ public interface PaymentDao {
 	public List<Payment> findByMerchantId(int id);
 	public double getPaymentSum();
 	public Payment findById(int id);
+	public void save(Payment payment);
+	public List<Payment> findAll();
 }

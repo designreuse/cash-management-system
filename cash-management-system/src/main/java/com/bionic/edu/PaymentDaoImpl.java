@@ -27,7 +27,18 @@ public class PaymentDaoImpl implements PaymentDao{
     public Payment findById(int id){
         return em.find(Payment.class, id);
     }
+
+    public void save(Payment payment) {
+    	em.persist(payment);
+    }
     
+    public List<Payment> findAll() {
+    	TypedQuery<Payment> query =
+    			em.createQuery("SELECT p FROM Payment p", Payment.class);
+    	List<Payment> listP = query.getResultList();
+    	return listP;
+    }
+
     /*
     public List<Result> getTotalReport(){
         String txt = "SELECT new com.bionic.edu.Result (p.merchant.name, count(p), SUM(p.chargePayed))";

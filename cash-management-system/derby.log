@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Dec 11 14:42:43 EET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0151-9110-99fb-000006562fb0 
+Fri Dec 11 17:48:16 EET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0151-91ba-7760-000006554908 
 on database directory /home/frostman/repos/cash-management-system/CM with class loader sun.misc.Launcher$AppClassLoader@c387f44 
 Loaded from file:/home/frostman/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation

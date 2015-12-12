@@ -29,4 +29,11 @@ public class CustomerDaoImpl implements CustomerDao {
 	      query.setParameter("limit", sumPayed);
 	      return query.getResultList();
 	}
+	
+	public List<Customer> findAll() {
+        TypedQuery<Customer> query = 	  
+                em.createQuery("SELECT c FROM Customer c", Customer.class);
+           List<Customer> listC = query.getResultList();
+           return listC;
+	}
 }
