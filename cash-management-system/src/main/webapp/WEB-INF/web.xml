@@ -10,15 +10,14 @@
 			org.springframework.web.context.ContextLoaderListener
         </listener-class>
   </listener>
- <!--servlet>
-    <servlet-name>Merchant</servlet-name>
-    <servlet-class>
-			org.springframework.web.servlet.DispatcherServlet
-     	</servlet-class>
-    <load-on-startup>1</load-on-startup>
+  <servlet>
+    <description></description>
+    <display-name>MerchantList</display-name>
+    <servlet-name>MerchantList</servlet-name>
+    <servlet-class>com.bionic.edu.MerchantList</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Merchant</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping-->
+    <servlet-name>MerchantList</servlet-name>
+    <url-pattern>/MerchantList</url-pattern>
+  </servlet-mapping>
 </web-app>

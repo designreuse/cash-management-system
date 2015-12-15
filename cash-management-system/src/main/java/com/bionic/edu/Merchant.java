@@ -94,4 +94,10 @@ public class Merchant {
 	public void setPayments(Collection<Payment> payments) {
 		this.payments = payments;
 	}
+	public String getDataForWeb(){
+	     String ret = "<tr><td>" + name +"<td>" +  
+	          bankName + "<td>" + charge + "<td>" + 
+	          minSum + "</tr>";
+	     return ret;
+	}
 }
