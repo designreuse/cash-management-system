@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="TRACE">
+	<appenders>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level	%logger{36} - %msg%n" />
+		</Console>
+
+		<RollingFile name="DaoFileAppender" fileName="logs/dao.log"
+			filePattern="/logs/dao-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout>
+				<pattern>
+					%d{yyyy.MM.dd HH:mm:ss.SSS} [%t] %-5level %c{36} %l:%msg%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy min="1" max="4" />
+		</RollingFile>
+
+	</appenders>
+
+	<loggers>
+		<root level="warn">
+			<appender-ref ref="Console" />
+		</root>
+
+		<logger level="info" additivity="false">
+			name="com.timmoroz.bionic.dao">
+			<appender-ref ref="DaoFileAppender" />
+		</logger>
+	</loggers>
+</configuration>
