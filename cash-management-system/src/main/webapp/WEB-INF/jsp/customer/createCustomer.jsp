@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css" />
 <title>Add a new customer</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
 	<div class="row">
 	<div class="col-md-12 col-xs-12">
 	<br>
-	<a href="<c:url value="/customer"/>" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+	<a href="<c:url value="/customers"/>" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
 	</div>
 	</div>
 	</div>
@@ -24,7 +24,7 @@
 	<div class="row">
 	<div class="col-md-12 col-xs-12">
 	<h2 style="color: #337ab7;font-family: 'Helvetica Neue'">Add a new customer</h2>
-	<c:url var="post_url"  value="/customer/put" />
+	<c:url var="post_url"  value="/addcustomer" />
 	<form action="${post_url}" method="POST" class="form-horizontal" role="form">
 		<table style="margin: 0 auto !important; float: none !important">
 			<tr>

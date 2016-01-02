@@ -22,16 +22,16 @@
 	<table class="table-responsive" style="margin: 0 auto !important;
   float: none !important">
   		<tr>
-  			<td><h2><a href="merchant" class="list-group-item btn-primary">Merchants</a></h2></td>
+  			<td><h2><a href="merchants" class="list-group-item btn-primary">Merchants</a></h2></td>
   		</tr>
   		<tr>
-  			<td><h2><a href="customer" class="list-group-item btn-primary">Customers</a></h2></td>
+  			<td><h2><a href="customers" class="list-group-item btn-primary">Customers</a></h2></td>
   		</tr>
   		<tr>
-  			<td><h2><a href="payment" class="list-group-item btn-primary">Payments</a></h2></td>
+  			<td><h2><a href="payments" class="list-group-item btn-primary">Payments</a></h2></td>
   		</tr>
   		<tr>
-  			<td><h2><a href="invoice" class="list-group-item btn-primary">Invoices</a></h2></td>
+  			<td><h2><a href="invoices" class="list-group-item btn-primary">Invoices</a></h2></td>
   		</tr>
   	</table>
 	</div>

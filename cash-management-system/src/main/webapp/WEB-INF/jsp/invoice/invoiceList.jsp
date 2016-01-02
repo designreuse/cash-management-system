@@ -60,10 +60,10 @@
 	
 	<div class="col-md-6 col-xs-6">
 	
-	<a href="<c:url value="/invoice/form"/>" class="btn btn-success"><span class="glyphicon glyphicon-list-alt"></span> Form new invoices</a>
+	<a href="<c:url value="/forminvoices"/>" class="btn btn-success"><span class="glyphicon glyphicon-list-alt"></span> Form new invoices</a>
 	</div>
 	<div class="col-md-6 col-xs-6">
-		<form action="<c:url value="/invoice/pay"/>" method="POST" class="form-inline" role="form">
+		<form action="<c:url value="/payinvoices"/>" method="POST" class="form-inline" role="form">
 				<input type="number" min="0" step="any" class="form-control" name="availableFunds" size="40" placeholder="Available funds, $" required >
 				<button type="submit" class="btn btn-warning">
   					<span class="glyphicon glyphicon-usd"></span> Pay the invoices

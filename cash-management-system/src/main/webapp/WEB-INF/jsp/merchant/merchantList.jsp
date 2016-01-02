@@ -69,10 +69,10 @@
 	
 	<div class="col-md-6 col-xs-6">
 	
-	<a href="<c:url value="/merchant/create"/>" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add a new merchant</a>
+	<a href="<c:url value="/addmerchant"/>" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add a new merchant</a>
 	</div>
 	<div class="col-md-6 col-xs-6">
-		<form action="<c:url value="/merchant/remove"/>" method="POST" class="form-inline" role="form">
+		<form action="<c:url value="/removemerchant"/>" method="POST" class="form-inline" role="form">
 				<input type="text" class="form-control" name="id" placeholder="Enter merchant's ID" required >
 				<button type="submit" class="btn btn-danger">
   					<span class="glyphicon glyphicon-remove"></span> Remove a merchant

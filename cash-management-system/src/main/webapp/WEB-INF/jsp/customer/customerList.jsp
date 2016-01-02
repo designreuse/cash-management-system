@@ -59,10 +59,10 @@
 	<div class="row">
 	<div class="col-md-6 col-xs-6">
 	
-	<a href="<c:url value="/customer/create"/>" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add a new customer</a>
+	<a href="<c:url value="/addcustomer"/>" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add a new customer</a>
 	</div>
 	<div class="col-md-6 col-xs-6">
-		<form action="<c:url value="/customer/remove"/>" method="POST" class="form-inline" role="form">
+		<form action="<c:url value="/removecustomer"/>" method="POST" class="form-inline" role="form">
 				<input type="text" class="form-control" name="id" placeholder="Enter customer's ID" required >
 				<button type="submit" class="btn btn-danger">
   					<span class="glyphicon glyphicon-remove"></span> Remove a customer
