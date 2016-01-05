@@ -122,39 +122,13 @@ public class GeneralController {
 	
 	@RequestMapping("/forminvoices")
 	public ModelAndView formInvoices() {
-		LocalDateTime ldt = null;
-		List<Merchant> readyMerchants =  merchantService.findReadyForInvoice();
-		for (Merchant merchant : readyMerchants) {
-			ldt = LocalDateTime.now();
-			Invoice invoice = new Invoice();
-			invoice.setMerchantId(merchant.getId());
-			invoice.setFormedDate(Timestamp.valueOf(ldt));
-			invoice.setStatus('P'); // 'P' for Pending
-			invoice.setSumSent(merchant.getNeedToSend());
-			invoiceService.save(invoice);
-			merchantService.updateWhenFormingInvoice(merchant.getId(),
-					invoice.getSumSent(), java.sql.Date.valueOf(ldt.toLocalDate()));
-		}
+		invoiceService.formInvoices();
 		return showInvoices();
 	}
 	
 	@RequestMapping(value = "/payinvoices", method = RequestMethod.POST)
 	public ModelAndView payInvoices(String availableFunds, Model model) {
-		double funds = Double.parseDouble(availableFunds);
-		double sumOfCurrentPayments = 0;
-		List<Invoice> unpaidInvoices = invoiceService.findUnpaid();
-		for (Invoice invoice : unpaidInvoices) {
-			double invoiceSum = invoice.getSumSent();
-			if (sumOfCurrentPayments + invoiceSum > funds) {
-				continue;
-			}
-
-			// TRANSACTION STARTS
-			invoiceService.payInvoices(invoice.getId());
-			sumOfCurrentPayments += invoiceSum;
-			// TRANSACTION ENDS
-		}
-		
+		invoiceService.payInvoices(availableFunds);
 		return showInvoices();
 	}
 }

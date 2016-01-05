@@ -14,5 +14,7 @@ public interface InvoiceService {
 	
 	public List<Invoice> findUnpaid();
 	
-	public void payInvoices(int id);
+	public void formInvoices();
+	
+	public void payInvoices(String availableFunds);
 }

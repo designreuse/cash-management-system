@@ -14,5 +14,5 @@ public interface InvoiceDao {
 	
 	public List<Invoice> findUnpaid();
 	
-	public void payInvoice(int id);
+	public void markAsPaid(int id);
 }

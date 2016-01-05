@@ -57,7 +57,7 @@ public class InvoiceDaoImpl implements InvoiceDao {
 	}
 
 	@Override
-	public void payInvoice(int id) {
+	public void markAsPaid(int id) {
 		Invoice invoice = em.find(Invoice.class, id);
 		invoice.setStatus('C'); // 'C' for completed
 		invoice.setSentDate(Timestamp.valueOf(LocalDateTime.now()));
