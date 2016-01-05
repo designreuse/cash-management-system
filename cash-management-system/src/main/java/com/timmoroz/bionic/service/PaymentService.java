@@ -15,4 +15,8 @@ public interface PaymentService {
 	public List<Payment> findAll();
 
 	public List<Payment> findByMerchantId(int id);
+	
+	public void addPayment(Payment payment);
+	
+	public void removePayment(String id);
 }

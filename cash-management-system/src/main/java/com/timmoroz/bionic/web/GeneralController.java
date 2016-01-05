@@ -103,41 +103,15 @@ public class GeneralController {
 	
 	@RequestMapping(value = "/addpayment", method = RequestMethod.POST)
 	public ModelAndView addPayment(@ModelAttribute Payment payment) {
-		int merchantId = payment.getMerchantId();
-		Merchant merchant = merchantService.findById(merchantId);
-		payment.setDt(Timestamp.valueOf(LocalDateTime.now()));
-		payment.setChargePayed(payment.getSumPayed() * merchant.getCharge() 
-				/ 100);
-		
-		/* CHARGE GOES TO OUR BANK ACCOUNT */
-
-		paymentService.save(payment);
-		merchantService.addToNeedToSend(merchantId,
-				payment.getSumPayed() - payment.getChargePayed());
+		paymentService.addPayment(payment);
 		return showPayments();
 	}
 	
 	// TODO method is prone to concurrent problems!
 	@RequestMapping(value = "/removepayment", method = RequestMethod.POST)
 	public ModelAndView removePayment(String id) {
-		Payment payment = paymentService.findById(Integer.parseInt(id));
-		java.sql.Date lastInvoiceFormedDate =
-				merchantService.
-				findById(payment.getMerchantId()).
-				getLastInvoiceFormed();
-		LocalDate paymentDate = payment.getDt().toLocalDateTime().toLocalDate();
-		LocalDate lastInvoiceDate = lastInvoiceFormedDate.toLocalDate();
-
-		if (paymentDate.isAfter(lastInvoiceDate)) {
-			merchantService.addToNeedToSend(payment.getMerchantId(),
-					payment.getSumPayed() * (-1));
-			paymentService.remove(payment.getId());
-			return showPayments();
-		} else {
-			throw new RuntimeException("The payment has been made before or "
-					+ "in the same day of the last invoice forming, and so it "
-					+ "cannot be deleted.");
-		}
+		paymentService.removePayment(id);
+		return showPayments();
 	}
 	
 	@RequestMapping("/invoices")
