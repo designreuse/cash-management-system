@@ -66,7 +66,7 @@ public class MerchantDaoImpl implements MerchantDao {
 	public void addToNeedToSend(int id, double needToSendMore) {
 		Merchant merchant = em.find(Merchant.class, id);
 		merchant.setNeedToSend(merchant.getNeedToSend() + needToSendMore);
-		em.merge(merchant);
+		//em.merge(merchant); // my fault
  		log.debug("Merchant with id=" + merchant.getId() +" has been merged.");
 	}
 	
@@ -76,7 +76,7 @@ public class MerchantDaoImpl implements MerchantDao {
 		merchant.setNeedToSend(merchant.getNeedToSend() - sumSent);
 		merchant.setSent(merchant.getSent() + sumSent);
 		merchant.setLastInvoiceFormed(lastInvoiceFormed);
-		em.merge(merchant);
+		//em.merge(merchant); // my fault
  		log.debug("Merchant with id=" + merchant.getId() +" has been merged.");
 	}
 }

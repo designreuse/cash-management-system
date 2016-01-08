@@ -61,7 +61,7 @@ public class InvoiceDaoImpl implements InvoiceDao {
 		Invoice invoice = em.find(Invoice.class, id);
 		invoice.setStatus('C'); // 'C' for completed
 		invoice.setSentDate(Timestamp.valueOf(LocalDateTime.now()));
-		em.merge(invoice);
+//		em.merge(invoice); // my fault
 		log.debug("The invoice with id=" + invoice.getId() + " has been paid and.");
 	}
 }
