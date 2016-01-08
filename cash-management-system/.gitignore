@@ -4,5 +4,5 @@ derby.log
 .classpath
 .springBeans
 .project
+/.settings
 
-/.settings/
